@@ -1,0 +1,16 @@
+# |──────────────────────────────────────────────────────────────────────────────────────────────
+# |                             A kódot davido112 készítette                                    |
+# |        A config.cisco fájlban van lehetőség kommentet írni az itt látható módon             |
+# |  A parancsokat célszerű teljesen kiírni mivel a program nem dob vissza hibát ha az eszközbe |
+# |                      rossz konfiguráció kerül vagy hibás parancs                            |
+# |                      https://github.com/davido112/project-spratan                           |
+# |─────────────────────────────────────────────────────────────────────────────────────────────|
+en
+conf t
+ho S3
+no ip domain-lookup
+line con 0
+logging syncronus
+exec-timeout 0 0
+exit
+do term hist s 250
