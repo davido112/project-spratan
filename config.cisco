@@ -14,3 +14,20 @@ logging syncronus
 exec-timeout 0 0
 exit
 do term hist s 250
+ip domain-name fasz.fasz
+crypto key generate rsa general-key modulus 1024
+username fasz secret fasz
+line vty 0 15
+exec-timeout 5 0
+login local
+exit
+ip ssh version 2
+int vlan 1
+ip address dhcp
+exit
+int f0/1
+switchport mode trunk
+switchport trunk allowed vlan 1
+switchport trunk native vlan 1
+switchport nonego
+end
